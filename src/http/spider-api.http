@@ -1,0 +1,80 @@
+### Get server
+
+GET https://spider2.analytics-euw1-dev-1.eks.schibsted.io/api/v1/server
+Accept: text/plain
+
+### Creates a new session
+
+POST https://spider2.analytics-euw1-dev-1.eks.schibsted.io/api/v1/sessions
+Content-Type: application/json
+Accept: text/plain
+
+{
+  "id": "832d31e4-140d-427c-a459-235a4feab4af",
+  "vrp": {
+    "topology": {
+      "type": "geographic"
+    },
+    "vehicles": [
+      {
+        "id": "car_0",
+        "startAddress": "lat=56.8312000436932;lon=13.9368456981301"
+      },
+      {
+        "id": "car_1",
+        "startAddress": "lat=56.8312000436932;lon=13.9368456981301"
+      },
+      {
+        "id": "car_2",
+        "startAddress": "lat=56.8312000436932;lon=13.9368456981301"
+      },
+      {
+        "id": "car_3",
+        "startAddress": "lat=56.8312000436932;lon=13.9368456981301"
+      }
+    ],
+    "orders": []
+  }
+}
+
+### Returns the current status of a specified session.
+
+GET https://spider2.analytics-euw1-dev-1.eks.schibsted.io/api/v1/sessions/832d31e4-140d-427c-a459-235a4feab4af
+Accept: text/plain
+
+### Get session warnings
+
+GET https://spider2.analytics-euw1-dev-1.eks.schibsted.io/api/v1/sessions/832d31e4-140d-427c-a459-235a4feab4af/warnings
+Accept: text/plain
+
+
+### Delete session
+
+DELETE https://spider2.analytics-euw1-dev-1.eks.schibsted.io/api/v1/sessions/832d31e4-140d-427c-a459-235a4feab4af
+Accept: text/plain
+
+### Starts optimization in a session.
+
+POST https://spider2.analytics-euw1-dev-1.eks.schibsted.io/api/v1/sessions/832d31e4-140d-427c-a459-235a4feab4af/startOptimization
+Accept: text/plain
+
+### Stop optimization in a session.
+
+POST https://spider2.analytics-euw1-dev-1.eks.schibsted.io/api/v1/sessions/832d31e4-140d-427c-a459-235a4feab4af/stopOptimization
+Accept: text/plain
+
+### Returns the currently best known solution to the session's problem
+
+GET https://spider2.analytics-euw1-dev-1.eks.schibsted.io/api/v1/sessions/832d31e4-140d-427c-a459-235a4feab4af/bestSolution
+Accept: text/plain
+
+### Returns a route from the currently best known solution to the session's problem
+
+GET https://spider2.analytics-euw1-dev-1.eks.schibsted.io/api/v1/sessions/832d31e4-140d-427c-a459-235a4feab4af/bestSolution/routes/car_0
+Accept: text/plain
+
+### Returns the reason why an order cannot be serviced
+
+GET https://spider2.analytics-euw1-dev-1.eks.schibsted.io/api/v1/sessions/832d31e4-140d-427c-a459-235a4feab4af/unservicedReason/12345
+Accept: text/plain
+

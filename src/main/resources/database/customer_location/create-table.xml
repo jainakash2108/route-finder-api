@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="create_customer_location_table" author="akash.jain">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="customer_location"/>
+            </not>
+        </preConditions>
+        <createTable tableName="customer_location">
+            <column name="id" type="bigserial" autoIncrement="true" startWith="1" incrementBy="1">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="pk_customer_location"/>
+            </column>
+            <column name="session_id" type="text"/>
+            <column name="vehicle_id" type="text"/>
+            <column name="latitude" type="text"/>
+            <column name="longitude" type="text"/>
+            <column name="created_at" type="timestamp"/>
+        </createTable>
+        <rollback>
+            <dropTable tableName="customer_location"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

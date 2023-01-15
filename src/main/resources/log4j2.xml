@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+  <Appenders>
+    <Console name="console" target="SYSTEM_OUT">
+      <PatternLayout pattern="%d{dd.MM.yyyy HH:mm:ss,SSS} [%X{correlationId}] [%t] %-5p [%.30c] - %m%n"/>
+    </Console>
+  </Appenders>
+  <Loggers>
+    <Root level="INFO">
+      <AppenderRef ref="console"/>
+    </Root>
+    <Logger name="org.apache.kafka" level="INFO"/>
+    <Logger name="org.springframework.web.servlet.PageNotFound" level="ERROR"/>
+    <Logger name="no.route.finder.routefinderapi" level="INFO"/>
+  </Loggers>
+</Configuration>

@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  db:
+    container_name: route-finder-api-db
+    image: postgres:15-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: route-finder-api
+      POSTGRES_USER: route-finder-api
+      POSTGRES_PASSWORD: route-finder-api

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+
+    <changeSet id="create_index_on_customer_location(session_id)" author="akash.jain">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <indexExists indexName="ix_customer_location_session_id" tableName="customer_location"/>
+            </not>
+        </preConditions>
+        <createIndex tableName="customer_location" indexName="ix_customer_location_session_id">
+            <column name="session_id"/>
+        </createIndex>
+        <rollback>
+            <dropIndex indexName="ix_customer_location_session_id" tableName="customer_location"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

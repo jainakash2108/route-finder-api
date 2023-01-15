@@ -1,0 +1,19 @@
+server:
+  servlet:
+    context-path: /route-finder-api
+  port: 8082
+logging:
+  config: classpath:log4j2.xml
+
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: route-finder-api
+    username: route-finder-api
+    url: jdbc:postgresql://localhost:5432/route-finder-api
+  liquibase:
+    change-log: database/db_changelog.xml
+    password: route-finder-api
+    user: route-finder-api
+spider-api:
+  url: https://spider2.analytics-euw1-dev-1.eks.schibsted.io/api/v1

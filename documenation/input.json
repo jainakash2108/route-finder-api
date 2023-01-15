@@ -1,0 +1,55 @@
+{
+  "id": "test-695",
+  "vrp": {
+    "topology": {
+      "type": "geographic"
+    },
+    "vehicles": [
+      {
+        "id": "car_0",
+        "startAddress": "lat=56.8312000436932;lon=13.9368456981301",
+        "capacity": [
+          174
+        ],
+        "timeWindow": {
+          "start": "2022-09-01T08:00Z",
+          "end": "2022-09-01T16:00Z"
+        }
+      },
+      {
+        "id": "car_1",
+        "startAddress": "lat=56.8312000436932;lon=13.9368456981301",
+        "capacity": [
+          174
+        ],
+        "timeWindow": {
+          "start": "2022-09-01T08:00Z",
+          "end": "2022-09-01T16:00Z"
+        }
+      },
+      {
+        "id": "car_2",
+        "startAddress": "lat=56.8312000436932;lon=13.9368456981301",
+        "capacity": [
+          174
+        ],
+        "timeWindow": {
+          "start": "2022-09-01T08:00Z",
+          "end": "2022-09-01T16:00Z"
+        }
+      },
+      {
+        "id": "car_3",
+        "startAddress": "lat=56.8312000436932;lon=13.9368456981301",
+        "capacity": [
+          174
+        ],
+        "timeWindow": {
+          "start": "2022-09-01T08:00Z",
+          "end": "2022-09-01T16:00Z"
+        }
+      }
+    ],
+    "orders": []
+  }
+}
